@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Fears</title>
-  <link rel="stylesheet" type="text/css" href="../css/universal.css">
-	<link rel="stylesheet" type="text/css" href="css/you.css">
-	<link rel="icon" type="image/png" href="../uni_img/ghost.png">
-  <script src="../js/universal.js" defer></script>
-</head>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="../main/main.html">Home</a>
-  <a href="../rid/rid.html">Overcome</a>
-</div>
+<html lang="en" dir="ltr">
+	<meta charset="utf-8">
+	<head>
+		<title>Fears</title>
+	  <link rel="stylesheet" type="text/css" href="../css/universal.css">
+		<link rel="stylesheet" type="text/css" href="css/you.css">
+		<link rel="icon" type="image/png" href="../uni_img/ghost.png">
 
-<span onclick="openNav()"><img src="../uni_img/menu.png" width=30px></span>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+					integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+					crossorigin="anonymous"></script>
+
+	  <script src="../js/universal.js" defer></script>
+		<script src="js/you.js" defer></script>
+	</head>
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="../main/main.html">Home</a>
+	  <a href="../rid/rid.html">Overcome</a>
+	</div>
+
+	<span onclick="openNav()"><img src="../uni_img/menu.png" width=30px></span>
+	<body>
+		<p>Select 3 unique fears from the pull down tabs below and get your unique phobia! (and eventually a nice description of it too!)<br><br></p>
+		<div id=yourFears></div>
+		<div id=phobia>
+			<select name="First Fear"id="firstFear"></select>
+			<select name="First Fear"id="secondFear"></select>
+			<select name="Third Fear"id="thirdFear"></select>
+			<button id=getFears>Calculate your unique Phobia!</button>
+		</div>
+		<div id=outputDiv>
+			<p id=outputP>"Your phobia will print here!"</p>
+		</div>
+	</body>
 </html>
