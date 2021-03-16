@@ -25,9 +25,21 @@
 		<p>Select 3 unique fears from the pull down tabs below and get your unique phobia! (and eventually a nice description of it too!)<br><br></p>
 		<div id=yourFears></div>
 		<div id=phobia>
-			<select name="First Fear"id="firstFear"></select>
-			<select name="First Fear"id="secondFear"></select>
-			<select name="Third Fear"id="thirdFear"></select>
+			<select name="First Fear"id="firstFear">
+				<option value="none" selected diabled hidden>
+          First
+      	</option>
+			</select>
+			<select name="First Fear"id="secondFear">
+				<option value="none" selected diabled hidden>
+          Second
+      	</option>
+			</select>
+			<select name="Third Fear"id="thirdFear">
+				<option value="none" selected diabled hidden>
+          Third
+      	</option>
+			</select>
 			<button id=getFears>Calculate your unique Phobia!</button>
 		</div>
 		<div id=outputDiv>

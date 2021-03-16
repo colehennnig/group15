@@ -3,6 +3,11 @@
   src: local("/css/fonts/TrueLies.ttf") format("ttf");
 }
 
+span {
+  padding: 3px;
+  filter: invert(100%);
+}
+
 .sidenav {
   height: 100%;
   width: 0;

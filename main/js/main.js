@@ -21,62 +21,98 @@ var phobias = [['Spiders', 'Aracnaphobia is the fear of spiders', 'Aracno', 'cre
               ['Insects', 'Entomophobia', 'Entom', 'creature', 'Many are afflicted with the fear of insects and it is one of the most common animal phobias. This phobia usually develops after a traumatic experience with insects and can develop early or late in life.'], ['Blood', 'Hemophobia', 'Hemo', 'thing', "Hemophobia can prevent sufferers from participating in activities that involve blood such as doctor's appointments. The sight of blood causes a vasovagal response- which entails a drop in blood pressure and heart rate. This causes sufferers to feel dizzy."]];
 
 
-function create(element) {
+// function create(element) {
+//   var d = document.createElement("div");
+//   d.setAttribute("id", element[0]);
+//   d.setAttribute("class", "main");
+//   var head = document.createElement("div");
+//   d.appendChild(head);
+//   head.setAttribute("id", element + "header");
+//   head.setAttribute("class", "head");
+//   head.innerHTML = element;
+//   document.getElementById("fears").appendChild(d);
+//   d.style.top = Math.floor((Math.random() * 700) + 1) + "px";
+//   d.style.left = Math.floor((Math.random() * 1100) + 200) + "px";
+//   dragElement(d);
+// }
+
+function create(phobiaEl) {
+  //Create div (tool tip w3schools)
   var d = document.createElement("div");
-  d.setAttribute("id", element);
+  d.setAttribute("id", phobiaEl[0]);
   d.setAttribute("class", "main");
+  d.setAttribute("class","tooltip");
+  //create div with fear name
   var head = document.createElement("div");
   d.appendChild(head);
-  head.setAttribute("id", element + "header");
+  head.setAttribute("id", phobiaEl[0] + "header");
   head.setAttribute("class", "head");
-  head.innerHTML = element;
+  head.innerHTML = phobiaEl[0];
+  //create hidden div with description that appear when hovered over
+  var description = document.createElement("div");
+  description.setAttribute("class","tooltiptext");
+  head.appendChild(description);
+  description.innerHTML = phobiaEl[4];
+  //put phobia in random location
   document.getElementById("fears").appendChild(d);
   d.style.top = Math.floor((Math.random() * 700) + 1) + "px";
-  d.style.left = Math.floor((Math.random() * 1100) + 200) + "px";
-  dragElement(d);
+  d.style.left = Math.floor((Math.random() * 50) + 5) + "px";
+  randomPlacement(d);
 }
 
 for (var i = 0; i < phobias.length; i++) {
-  create(phobias[i][0]);
+  create(phobias[i]);
 }
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
+function randomPlacement(elemt){
+  if(document.getElementById(elemt.id+"header")){
+    document.getElementById(elemt.id+"header").onclick = function(){
+      //https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element-relative-to-the-browser-window
+      var top = parseInt(elemt.style.top.replace("px", ""));
+      var left = parseInt(elemt.style.left.replace("px", ""));
+      elemt.style.top = top + ((Math.random() * 200) + (Math.random() * -200)) +"px";
+      elemt.style.left = left + ((Math.random() * 200) + (Math.random() * -200)) +"px";
+    }
   }
 }
+
+// function dragElement(elmnt) {
+//   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//   if (document.getElementById(elmnt.id + "header")) {
+//     // if present, the header is where you move the DIV from:
+//     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+//   } else {
+//     // otherwise, move the DIV from anywhere inside the DIV:
+//     elmnt.onmousedown = dragMouseDown;
+//   }
+//
+//   function dragMouseDown(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // get the mouse cursor position at startup:
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     document.onmouseup = closeDragElement;
+//     // call a function whenever the cursor moves:
+//     document.onmousemove = elementDrag;
+//   }
+//
+//   function elementDrag(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // calculate the new cursor position:
+//     pos1 = pos3 - e.clientX;
+//     pos2 = pos4 - e.clientY;
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     // set the element's new position:
+//     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+//     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+//   }
+//
+//   function closeDragElement() {
+//     // stop moving when mouse button is released:
+//     document.onmouseup = null;
+//     document.onmousemove = null;
+//   }
+// }
