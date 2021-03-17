@@ -3,7 +3,9 @@ html, body {
   padding: 0;
   background-image: url("../img/tunnel.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 101.7% 75%;
+  z-index: 0;
+  background-color: black;
 }
 
 #quote {
@@ -11,4 +13,52 @@ html, body {
   font-size: 25px;
   padding: 50px;
   color: white;
+}
+
+#end {
+  text-align: center;
+  font-size: 25px;
+  padding: 50px;
+  color: black;
+}
+
+#face {
+  display:block;
+  width:100%; height:100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+.o0 {
+  opacity: 1;
+}
+.o1 {
+  opacity: 0.9;
+}
+.o2 {
+  opacity: 0.8;
+}
+.o3 {
+  opacity: 0.7;
+}
+.o4 {
+  opacity: 0.6;
+}
+.o5 {
+  opacity: 0.5;
+}
+.o6 {
+  opacity: 0.4;
+}
+.o7 {
+  opacity: 0.3;
+}
+.o8 {
+  opacity: 0.2;
+}
+.o9 {
+  opacity: 0.1;
+}
+.o10 {
+  opacity: 0;
 }

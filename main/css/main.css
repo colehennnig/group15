@@ -4,6 +4,7 @@ html, body {
   background-image: url("../img/wall.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
 
 .main {
@@ -17,8 +18,8 @@ html, body {
 .head {
   padding: 10px;
   z-index: 10;
-  background-color: #2196F3;
-  color: #fff;
+  background-color: #fbfbf8;
+  color: black;
   font-size: 20px;
 }
 
