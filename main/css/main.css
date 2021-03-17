@@ -25,6 +25,7 @@ html, body {
 
 .head:hover {
   cursor: grab;
+  background-color: red;
 }
 
 .head:active {
