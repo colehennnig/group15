@@ -13,6 +13,9 @@ html, body {
   font-size: 25px;
   padding: 50px;
   color: white;
+  position:relative;
+  z-index:3;
+  top:-750px;
 }
 
 #end {
@@ -20,6 +23,9 @@ html, body {
   font-size: 25px;
   padding: 50px;
   color: black;
+  position:relative;
+  z-index:1;
+  top:-630px;
 }
 
 #face {
@@ -28,6 +34,9 @@ html, body {
   object-fit: cover;
   position: relative;
   z-index: 2;
+  top:-35px;
+  left:0px;
+  pointer-events: none
 }
 .o0 {
   opacity: 1;
